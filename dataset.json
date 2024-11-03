@@ -1,0 +1,67 @@
+[
+    {
+        "text": "The Supreme Court heard the case between petitioner John Doe and respondent Jane Smith on 23rd September 2023.",
+        "entities": [
+            {"start": 4, "end": 17, "label": "court"},
+            {"start": 42, "end": 52, "label": "petitioner"},
+            {"start": 68, "end": 79, "label": "respondent"},
+            {"start": 83, "end": 100, "label": "date"},
+            {"start": 26, "end": 30, "label": "case number"}
+        ]
+    },
+    {
+        "text": "Advocate Michael Brown represented the petitioner in the court of District Court, New York.",
+        "entities": [
+            {"start": 9, "end": 22, "label": "lawyer"},
+            {"start": 38, "end": 48, "label": "petitioner"},
+            {"start": 63, "end": 77, "label": "court"},
+            {"start": 79, "end": 88, "label": "place"}
+        ]
+    },
+    {
+        "text": "The witness, Mr. Robert, provided key testimony on 10th April 2022.",
+        "entities": [
+            {"start": 4, "end": 11, "label": "witness"},
+            {"start": 17, "end": 28, "label": "other person"},
+            {"start": 52, "end": 66, "label": "date"},
+            {"start": 63, "end": 67, "label": "year"}
+        ]
+    },
+    {
+        "text": "The case was filed in the State of California under provision 12A of the Penal Code.",
+        "entities": [
+            {"start": 26, "end": 45, "label": "state"},
+            {"start": 52, "end": 62, "label": "provision"}
+        ]
+    },
+    {
+        "text": "Judge Sarah Connor referenced precedent ABC123 in her ruling.",
+        "entities": [
+            {"start": 6, "end": 19, "label": "judge"},
+            {"start": 30, "end": 38, "label": "precedent"}
+        ]
+    },
+    {
+        "text": "The petitioner was 35 years old at the time of the hearing.",
+        "entities": [
+            {"start": 4, "end": 14, "label": "petitioner"},
+            {"start": 19, "end": 21, "label": "age"}
+        ]
+    },
+    {
+        "text": "The case number for this trial is CA-2023-0145, held at Los Angeles District Court.",
+        "entities": [
+            {"start": 22, "end": 33, "label": "case number"},
+            {"start": 42, "end": 54, "label": "distt"},
+            {"start": 58, "end": 75, "label": "court"},
+            {"start": 79, "end": 90, "label": "place"}
+        ]
+    },
+    {
+        "text": "The organization XYZ Law Firm provided legal counsel to the respondent.",
+        "entities": [
+            {"start": 18, "end": 31, "label": "org"},
+            {"start": 61, "end": 71, "label": "respondent"}
+        ]
+    }
+]

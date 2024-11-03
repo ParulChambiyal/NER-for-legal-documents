@@ -1,0 +1,5 @@
+flask
+ocr
+flask_httpauth
+numpy
+pymongo
