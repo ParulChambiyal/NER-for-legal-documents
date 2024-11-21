@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracted Entities</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Entity Block Styles */
+#entities-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.entity {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    min-width: 100px;
+    margin: 5px;
+}
+
+/* Entity Types (Add classes for each type in your model) */
+.PERSON {
+    background-color: #007bff;
+}
+
+.ORGANIZATION {
+    background-color: #28a745;
+}
+
+.DATE {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.LOCATION {
+    background-color: #dc3545;
+}
+
+.CASE_NUMBER {
+    background-color: #6f42c1;
+}
+
+.DOCUMENT {
+    background-color: #17a2b8;
+}
+
+/* Text Styles */
+.entity-text {
+    font-weight: bold;
+}
+
+.entity-type {
+    font-size: 12px;
+    margin-top: 2px;
+    opacity: 0.8;
+}
+</style>
+
+</head>
+<body>
+    <form action="/display-entities" method="POST">      
+    <div class="container">
+        <h1>Extracted Entities from Legal Document</h1>
+        <div id="entities-container">
+            <div class="mt-4">
+                <pre>{{ entities }}</pre>
+            </div>
+
+            <ul>
+                {% for entity in entities %}
+                <li>{{ entity }}</li>
+                {% endfor %}
+            </ul>
+            <div class="text-center mt-4">
+                <a href="/" class="btn btn-primary">Back to Home</a>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Placeholder for future interactivity, such as filtering or expanding entities
+    console.log("Page loaded - entities ready to view.");
+}); </script>
+    </form>
+</body>
+</html>
