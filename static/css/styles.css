@@ -122,4 +122,16 @@
   .register-link p a:hover{
     text-decoration: underline;
   }  
+  li.error {
+    color: #F0E68C;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  #error-message {
+    color: #F0E68C;
+    font-weight: bold;
+    text-align: center;
+    
+}
  
