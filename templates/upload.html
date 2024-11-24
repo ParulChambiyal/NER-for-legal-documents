@@ -81,6 +81,7 @@
         <button type="button" class="btn btn-success" id="saveTextButton">Save as Text File</button>
         <button type="button" class="btn btn-secondary" id="extractEntitiesButton">Extract Entities</button>
     </div>
+    <div id="result" class="mt-4"></div> 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/2.1.1/tesseract.min.js"></script>
@@ -145,16 +146,17 @@
             alert("No text available to extract entities.");
             return;
         }
+          // Assuming you have a div or other container for displaying entities
     
         // Prepare data to be sent to the server
-        let data = JSON.stringify({ text: extractedText });
+        let data = JSON.stringify({ extracted_text: extractedText });
     
         fetch("/perform_entity_recognition", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",  // Set header to indicate JSON payload
             },
-            body: data  // Send the extracted text
+            body:  JSON.stringify({ extracted_text: extractedText })  // Send the extracted text
         })
         .then(response => {
             if (!response.ok) {
@@ -165,9 +167,13 @@
             return response.json();
         })
         .then(data => {
-            if (data.entities) {
-                alert("Entities Extracted:\n" + JSON.stringify(data.entities, null, 2));
-            } else {
+            if (data.redirect_url) {
+                // Redirect to result page
+                window.location.href = data.redirect_url;
+            } else if (data.message) {
+                alert(data.message); // Show the "No entities recognized" message from the server
+            }
+            else {
                 alert("No entities extracted.");
             }
         })

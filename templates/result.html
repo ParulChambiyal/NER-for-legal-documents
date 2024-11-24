@@ -7,8 +7,13 @@
     <style>
         /* General Styles */
 body {
+    background-image: url('/static/images/bg.png');
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
     color: #333;
     margin: 0;
     padding: 0;
@@ -89,20 +94,20 @@ h1 {
 </head>
 <body>
     <form action="/display-entities" method="POST">      
-    <div class="container">
-        <h1>Extracted Entities from Legal Document</h1>
-        <div id="entities-container">
-            <div class="mt-4">
-                <pre>{{ entities }}</pre>
-            </div>
-
-            <ul>
-                {% for entity in entities %}
+    <div class="container" id="entitiesDisplay">
+        <h1>Extracted Entities from Legal Document</h1>  
+        {% if entities %}
+        <ul>
+            {% for entity in entities %}
                 <li>{{ entity }}</li>
-                {% endfor %}
-            </ul>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No entities found.</p>
+    {% endif %}
+
             <div class="text-center mt-4">
-                <a href="/" class="btn btn-primary">Back to Home</a>
+                <a href="/upload" class="btn btn-primary">Back to Home</a>
             </div>
             
         </div>
